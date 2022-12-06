@@ -1,0 +1,784 @@
+{
+	"info": {
+		"_postman_id": "2014ac07-4ff9-450f-a35f-1ee889ffa46b",
+		"name": "User API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13699134"
+	},
+	"item": [
+		{
+			"name": "Create user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"Jean\",\r\n  \"birthDate\": \"2000-12-02T12:25:28.318Z\",\r\n  \"country\": \"France\",\r\n  \"phone\": \"xxx-xxx-xxx\",\r\n  \"gender\": \"FEMALE\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create user",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"Jean\",\r\n  \"birthDate\": \"2000-12-02T12:25:28.318Z\",\r\n  \"country\": \"France\",\r\n  \"phone\": \"xxx-xxx-xxx\",\r\n  \"gender\": \"FEMALE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 05 Dec 2022 23:20:51 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"username\": \"Jean\",\n    \"birthDate\": \"2000-12-02T12:25:28.318+00:00\",\n    \"country\": \"France\",\n    \"phone\": \"xxx-xxx-xxx\",\n    \"gender\": \"FEMALE\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Create minor user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"Marie\",\r\n  \"birthDate\": \"2007-12-02T12:25:28.318Z\",\r\n  \"country\": \"France\",\r\n  \"phone\": \"xxx-xxx-xxx\",\r\n  \"gender\": \"FEMALE\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create minor user",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"Marie\",\r\n  \"birthDate\": \"2007-12-02T12:25:28.318Z\",\r\n  \"country\": \"France\",\r\n  \"phone\": \"xxx-xxx-xxx\",\r\n  \"gender\": \"FEMALE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 05 Dec 2022 23:21:05 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"timestamp\": \"2022-12-05T23:21:05.906+00:00\",\n    \"status\": 400,\n    \"error\": \"Bad Request\",\n    \"message\": \"Minimum age is 18.\",\n    \"path\": \"/user\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Create user without phone",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"Paul\",\r\n  \"birthDate\": \"2000-12-02T12:25:28.318Z\",\r\n  \"country\": \"France\",\r\n  \"gender\": \"MALE\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create user without phone",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"Paul\",\r\n  \"birthDate\": \"2000-12-02T12:25:28.318Z\",\r\n  \"country\": \"France\",\r\n  \"gender\": \"MALE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 05 Dec 2022 23:21:15 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 2,\n    \"username\": \"Paul\",\n    \"birthDate\": \"2000-12-02T12:25:28.318+00:00\",\n    \"country\": \"France\",\n    \"phone\": null,\n    \"gender\": \"MALE\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Create user without gender",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"Dominique\",\r\n  \"birthDate\": \"2000-12-02T12:25:28.318Z\",\r\n  \"country\": \"France\",\r\n  \"phone\": \"xxx-xxx-xxx\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create user without gender",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"Dominique\",\r\n  \"birthDate\": \"2000-12-02T12:25:28.318Z\",\r\n  \"country\": \"France\",\r\n  \"phone\": \"xxx-xxx-xxx\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 05 Dec 2022 23:21:27 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 3,\n    \"username\": \"Dominique\",\n    \"birthDate\": \"2000-12-02T12:25:28.318+00:00\",\n    \"country\": \"France\",\n    \"phone\": \"xxx-xxx-xxx\",\n    \"gender\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "Create user without phone and gender",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"Karl\",\r\n  \"birthDate\": \"2000-12-02T12:25:28.318Z\",\r\n  \"country\": \"France\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create user without phone and gender",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"Karl\",\r\n  \"birthDate\": \"2000-12-02T12:25:28.318Z\",\r\n  \"country\": \"France\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 05 Dec 2022 23:21:32 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 4,\n    \"username\": \"Karl\",\n    \"birthDate\": \"2000-12-02T12:25:28.318+00:00\",\n    \"country\": \"France\",\n    \"phone\": null,\n    \"gender\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "Create a non french user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"Tara\",\r\n  \"birthDate\": \"2000-12-02T12:25:28.318Z\",\r\n  \"country\": \"Népal\",\r\n  \"phone\": \"xxx-xxx-xxx\",\r\n  \"gender\": \"OTHER\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create a non french user",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"Tara\",\r\n  \"birthDate\": \"2000-12-02T12:25:28.318Z\",\r\n  \"country\": \"Népal\",\r\n  \"phone\": \"xxx-xxx-xxx\",\r\n  \"gender\": \"OTHER\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 05 Dec 2022 23:21:36 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"timestamp\": \"2022-12-05T23:21:36.629+00:00\",\n    \"status\": 400,\n    \"error\": \"Bad Request\",\n    \"message\": \"Validation failed for object='user'. Error count: 1\",\n    \"errors\": [\n        {\n            \"codes\": [\n                \"Pattern.user.country\",\n                \"Pattern.country\",\n                \"Pattern.java.lang.String\",\n                \"Pattern\"\n            ],\n            \"arguments\": [\n                {\n                    \"codes\": [\n                        \"user.country\",\n                        \"country\"\n                    ],\n                    \"arguments\": null,\n                    \"defaultMessage\": \"country\",\n                    \"code\": \"country\"\n                },\n                [],\n                {\n                    \"arguments\": null,\n                    \"defaultMessage\": \"France\",\n                    \"codes\": [\n                        \"France\"\n                    ]\n                }\n            ],\n            \"defaultMessage\": \"doit correspondre à \\\"France\\\"\",\n            \"objectName\": \"user\",\n            \"field\": \"country\",\n            \"rejectedValue\": \"Népal\",\n            \"bindingFailure\": false,\n            \"code\": \"Pattern\"\n        }\n    ],\n    \"path\": \"/user\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Create user with invalid input",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"prénom\": \"Serge\",\r\n  \"birthDate\": \"2000-12-02T12:25:28.318Z\",\r\n  \"country\": \"France\",\r\n  \"phone\": \"xxx-xxx-xxx\",\r\n  \"gender\": \"MALE\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create user with invalid input",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"prénom\": \"Serge\",\r\n  \"birthDate\": \"2000-12-02T12:25:28.318Z\",\r\n  \"country\": \"France\",\r\n  \"phone\": \"xxx-xxx-xxx\",\r\n  \"gender\": \"MALE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 05 Dec 2022 23:21:41 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"timestamp\": \"2022-12-05T23:21:41.059+00:00\",\n    \"status\": 400,\n    \"error\": \"Bad Request\",\n    \"message\": \"Validation failed for object='user'. Error count: 2\",\n    \"errors\": [\n        {\n            \"codes\": [\n                \"NotNull.user.username\",\n                \"NotNull.username\",\n                \"NotNull.java.lang.String\",\n                \"NotNull\"\n            ],\n            \"arguments\": [\n                {\n                    \"codes\": [\n                        \"user.username\",\n                        \"username\"\n                    ],\n                    \"arguments\": null,\n                    \"defaultMessage\": \"username\",\n                    \"code\": \"username\"\n                }\n            ],\n            \"defaultMessage\": \"ne doit pas être nul\",\n            \"objectName\": \"user\",\n            \"field\": \"username\",\n            \"rejectedValue\": null,\n            \"bindingFailure\": false,\n            \"code\": \"NotNull\"\n        },\n        {\n            \"codes\": [\n                \"NotEmpty.user.username\",\n                \"NotEmpty.username\",\n                \"NotEmpty.java.lang.String\",\n                \"NotEmpty\"\n            ],\n            \"arguments\": [\n                {\n                    \"codes\": [\n                        \"user.username\",\n                        \"username\"\n                    ],\n                    \"arguments\": null,\n                    \"defaultMessage\": \"username\",\n                    \"code\": \"username\"\n                }\n            ],\n            \"defaultMessage\": \"ne doit pas être vide\",\n            \"objectName\": \"user\",\n            \"field\": \"username\",\n            \"rejectedValue\": null,\n            \"bindingFailure\": false,\n            \"code\": \"NotEmpty\"\n        }\n    ],\n    \"path\": \"/user\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Fetch user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/user/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Fetch user",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/user/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 05 Dec 2022 23:21:45 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"username\": \"Jean\",\n    \"birthDate\": \"2000-12-02T12:25:28.318+00:00\",\n    \"country\": \"France\",\n    \"phone\": \"xxx-xxx-xxx\",\n    \"gender\": \"FEMALE\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Fetch not existing user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/user/999",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"999"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Fetch not existing user",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/user/999",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"999"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 05 Dec 2022 23:21:50 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"timestamp\": \"2022-12-05T23:21:50.613+00:00\",\n    \"status\": 404,\n    \"error\": \"Not Found\",\n    \"message\": \"404 NOT_FOUND\",\n    \"path\": \"/user/999\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Fetch without any user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/user/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Fetch without any user",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/user/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								""
+							]
+						}
+					},
+					"status": "Method Not Allowed",
+					"code": 405,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Allow",
+							"value": "POST"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 05 Dec 2022 23:21:54 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"timestamp\": \"2022-12-05T23:21:54.959+00:00\",\n    \"status\": 405,\n    \"error\": \"Method Not Allowed\",\n    \"message\": \"Request method 'GET' not supported\",\n    \"path\": \"/user/\"\n}"
+				}
+			]
+		}
+	]
+}
