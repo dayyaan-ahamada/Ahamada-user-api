@@ -8,6 +8,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import com.user.api.TestUtils.TestUtils;
 import com.user.api.models.User;
+import com.user.api.utils.DateUtils;
 
 public class DateUtilsTest {
     @Test

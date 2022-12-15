@@ -7,7 +7,7 @@ import com.user.api.repositories.UserRepository;
 
 import javax.validation.Valid;
 
-import static com.user.api.Utils.DateUtils.validateUserBirthDate;
+import static com.user.api.utils.DateUtils.validateUserBirthDate;
 
 import java.util.Optional;
 

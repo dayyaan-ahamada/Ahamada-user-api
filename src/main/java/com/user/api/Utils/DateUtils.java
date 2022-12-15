@@ -1,4 +1,4 @@
-package com.user.api.Utils;
+package com.user.api.utils;
 
 import static org.springframework.http.HttpStatus.BAD_REQUEST;
 
