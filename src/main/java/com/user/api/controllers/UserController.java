@@ -13,9 +13,11 @@ import com.user.api.dto.UserDTO;
 import com.user.api.models.User;
 import com.user.api.services.UserServiceInterface;
 
+import lombok.extern.slf4j.Slf4j;
 
 @RestController
 @RequestMapping("/user")
+@Slf4j
 public class UserController {
 
     @Autowired
@@ -30,9 +32,9 @@ public class UserController {
 
     @GetMapping("/{userId}")
     public UserDTO getUser(@PathVariable(name = User.API_PATH) int userId) {
-        
+
         User user = userService.getUser(userId)
-                .orElseThrow(() -> new ResponseStatusException(NOT_FOUND));
+                .orElseThrow(() -> new ResponseStatusException(NOT_FOUND, "Could not found user " + userId));
 
         UserDTO userDTO = modelMapper.map(user, UserDTO.class);
 
@@ -45,6 +47,8 @@ public class UserController {
         User userRequest = modelMapper.map(userToCreate, User.class);
 
         User user = userService.createUser(userRequest);
+
+        log.info("User has been created.");
 
         return modelMapper.map(user, UserDTO.class);
     }
