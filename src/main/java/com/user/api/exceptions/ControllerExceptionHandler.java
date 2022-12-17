@@ -17,13 +17,20 @@ import org.springframework.web.server.ResponseStatusException;
 @ControllerAdvice
 @Slf4j
 public class ControllerExceptionHandler extends ResponseEntityExceptionHandler {
-  
-    @ExceptionHandler({ResponseStatusException.class})
-  protected ResponseEntity<Object> handleConflict(
-    ResponseStatusException ex, WebRequest request) {
-      String bodyOfResponse = ex.getStatus() + " " + ex.getReason();
-      log.error(bodyOfResponse);
-      return handleExceptionInternal(ex, "Error : "+bodyOfResponse, 
+
+  /**
+   * Return status code and reason of all ResponseStatusException
+   * 
+   * @param ex
+   * @param request
+   * @return ResponseEntity<Object>
+   */
+  @ExceptionHandler(ResponseStatusException.class)
+  protected ResponseEntity<Object> handleResponseStatusConflict(
+      ResponseStatusException ex, WebRequest request) {
+    String bodyOfResponse = ex.getStatus() + " " + ex.getReason();
+    log.error(bodyOfResponse);
+    return handleExceptionInternal(ex, "Error : " + bodyOfResponse,
         new HttpHeaders(), HttpStatus.CONFLICT, request);
   }
 }

@@ -30,6 +30,13 @@ public class UserController {
         this.userService = userService;
     }
 
+    /**
+     * GET Method for a given user
+     * 
+     * @param userId
+     * @return UserDTO
+     * @throws ResponseStatusException
+     */
     @GetMapping("/{userId}")
     public UserDTO getUser(@PathVariable(name = User.API_PATH) int userId) {
 
@@ -41,6 +48,12 @@ public class UserController {
         return userDTO;
     }
 
+    /**
+     * POST method to create an user
+     * 
+     * @param userToCreate
+     * @return UserDTO
+     */
     @PostMapping
     public UserDTO createUser(@RequestBody @Valid UserDTO userToCreate) {
 
@@ -48,7 +61,7 @@ public class UserController {
 
         User user = userService.createUser(userRequest);
 
-        log.info("User has been created.");
+        log.info("An user has been created.");
 
         return modelMapper.map(user, UserDTO.class);
     }

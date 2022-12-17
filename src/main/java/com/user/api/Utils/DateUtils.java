@@ -10,6 +10,14 @@ import org.springframework.web.server.ResponseStatusException;
 import com.user.api.models.User;
 
 public class DateUtils {
+
+    /**
+     * Check if a given user is adult and return true if so
+     * 
+     * @param userToCreate
+     * @return boolean
+     * @throws ResponseStatusException
+     */
     public static boolean validateUserBirthDate(User userToCreate) {
         LocalDate parsedDate = userToCreate.getBirthDate()
                 .toInstant()

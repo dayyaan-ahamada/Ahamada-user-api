@@ -19,6 +19,12 @@ public class UserService implements UserServiceInterface {
         this.userRepository = userRepository;
     }
 
+    /**
+     * Create an adult user and return it
+     * 
+     * @param userToCreate
+     * @return User
+     */
     @Override
     public User createUser(@Valid User userToCreate) {
         validateUserBirthDate(userToCreate);
@@ -26,6 +32,12 @@ public class UserService implements UserServiceInterface {
         return userRepository.save(userToCreate);
     }
 
+    /**
+     * Return an optional of a given user
+     * 
+     * @param id
+     * @return Optional<User>
+     */
     @Override
     public Optional<User> getUser(int id) {
         return userRepository.findById(id);
